@@ -1,0 +1,13 @@
+# Ignore all data in IS/data
+data/
+
+# Just in case, also ignore common compressed dataset archives
+*.tar.gz
+*.zip
+*.gz
+
+# Python cache
+__pycache__/
+*.pkl
+*.npz
+*.npy
