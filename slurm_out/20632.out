@@ -1,0 +1,29 @@
+/mnt/local/python3.12/lib/python3.12/site-packages/torch/cuda/__init__.py:209: UserWarning: 
+NVIDIA GeForce RTX 5090 with CUDA capability sm_120 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_50 sm_60 sm_70 sm_75 sm_80 sm_86 sm_90.
+If you want to use the NVIDIA GeForce RTX 5090 GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  warnings.warn(
+Files already downloaded and verified
+Files already downloaded and verified
+
+=== Trial 1/3 ===
+
+Training GELU_A model with param=0...
+Traceback (most recent call last):
+  File "/home/zyang/IS/test.py", line 344, in <module>
+    results_param_as, summary_df_as = run_experiments(
+                                      ^^^^^^^^^^^^^^^^
+  File "/home/zyang/IS/test.py", line 237, in run_experiments
+    torch.nn.init.xavier_uniform_(layer.weight)
+  File "/mnt/local/python3.12/lib/python3.12/site-packages/torch/nn/init.py", line 362, in xavier_uniform_
+    return _no_grad_uniform_(tensor, -a, a, generator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/local/python3.12/lib/python3.12/site-packages/torch/nn/init.py", line 15, in _no_grad_uniform_
+    return tensor.uniform_(a, b, generator=generator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: no kernel image is available for execution on the device
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+

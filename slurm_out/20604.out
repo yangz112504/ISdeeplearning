@@ -1,0 +1,184 @@
+Files already downloaded and verified
+Files already downloaded and verified
+
+=== Trial 1/1 ===
+
+Training GELU_A model with param=0...
+[Epoch 1/2] Train Loss: 2.1303
+[Epoch 1/2] Test Loss: 2.0168 | Accuracy: 25.35%
+[Epoch 2/2] Train Loss: 2.0077
+[Epoch 2/2] Test Loss: 1.9629 | Accuracy: 27.23%
+
+Training GELU_A model with param=0.25...
+[Epoch 1/2] Train Loss: 2.1297
+[Epoch 1/2] Test Loss: 2.0072 | Accuracy: 25.04%
+[Epoch 2/2] Train Loss: 1.9829
+[Epoch 2/2] Test Loss: 1.9255 | Accuracy: 27.72%
+
+Training GELU_A model with param=0.5...
+[Epoch 1/2] Train Loss: 2.1342
+[Epoch 1/2] Test Loss: 2.0072 | Accuracy: 24.59%
+[Epoch 2/2] Train Loss: 1.9775
+[Epoch 2/2] Test Loss: 1.9134 | Accuracy: 27.13%
+
+Training GELU_A model with param=1...
+[Epoch 1/2] Train Loss: 2.1228
+[Epoch 1/2] Test Loss: 1.9898 | Accuracy: 25.29%
+[Epoch 2/2] Train Loss: 1.9331
+[Epoch 2/2] Test Loss: 1.8412 | Accuracy: 29.17%
+
+Training GELU_A model with param=2...
+[Epoch 1/2] Train Loss: 2.0930
+[Epoch 1/2] Test Loss: 1.8909 | Accuracy: 27.48%
+[Epoch 2/2] Train Loss: 1.8164
+[Epoch 2/2] Test Loss: 1.7206 | Accuracy: 35.08%
+
+Training GELU_A model with param=5...
+[Epoch 1/2] Train Loss: 2.0119
+[Epoch 1/2] Test Loss: 1.7750 | Accuracy: 32.70%
+[Epoch 2/2] Train Loss: 1.7093
+[Epoch 2/2] Test Loss: 1.6278 | Accuracy: 38.51%
+
+Training GELU_A model with param=1000...
+[Epoch 1/2] Train Loss: 2.0642
+[Epoch 1/2] Test Loss: 1.8566 | Accuracy: 26.52%
+[Epoch 2/2] Train Loss: 1.7825
+[Epoch 2/2] Test Loss: 1.6756 | Accuracy: 36.07%
+
+Training SILU_A model with param=0...
+[Epoch 1/2] Train Loss: 2.1386
+[Epoch 1/2] Test Loss: 2.0146 | Accuracy: 25.49%
+[Epoch 2/2] Train Loss: 1.9965
+[Epoch 2/2] Test Loss: 1.9358 | Accuracy: 27.68%
+
+Training SILU_A model with param=0.25...
+[Epoch 1/2] Train Loss: 2.1317
+[Epoch 1/2] Test Loss: 2.0077 | Accuracy: 24.56%
+[Epoch 2/2] Train Loss: 1.9746
+[Epoch 2/2] Test Loss: 1.9074 | Accuracy: 28.41%
+
+Training SILU_A model with param=0.5...
+[Epoch 1/2] Train Loss: 2.1263
+[Epoch 1/2] Test Loss: 2.0036 | Accuracy: 25.32%
+[Epoch 2/2] Train Loss: 1.9764
+[Epoch 2/2] Test Loss: 1.9093 | Accuracy: 27.80%
+
+Training SILU_A model with param=1...
+[Epoch 1/2] Train Loss: 2.1264
+[Epoch 1/2] Test Loss: 2.0004 | Accuracy: 25.88%
+[Epoch 2/2] Train Loss: 1.9581
+[Epoch 2/2] Test Loss: 1.8851 | Accuracy: 28.79%
+
+Training SILU_A model with param=2...
+[Epoch 1/2] Train Loss: 2.1129
+[Epoch 1/2] Test Loss: 1.9631 | Accuracy: 26.17%
+[Epoch 2/2] Train Loss: 1.8798
+[Epoch 2/2] Test Loss: 1.7616 | Accuracy: 33.65%
+
+Training SILU_A model with param=5...
+[Epoch 1/2] Train Loss: 2.0499
+[Epoch 1/2] Test Loss: 1.8449 | Accuracy: 31.10%
+[Epoch 2/2] Train Loss: 1.7447
+[Epoch 2/2] Test Loss: 1.6595 | Accuracy: 37.60%
+
+Training SILU_A model with param=1000...
+[Epoch 1/2] Train Loss: 2.0619
+[Epoch 1/2] Test Loss: 1.8510 | Accuracy: 28.43%
+[Epoch 2/2] Train Loss: 1.7763
+[Epoch 2/2] Test Loss: 1.6524 | Accuracy: 36.43%
+
+Summary for GELU_a / SILU_a:
+   network  dataset activation    param  mean_train_loss  std_train_loss  mean_test_loss  std_test_loss  mean_accuracy  std_accuracy
+0    VGG11  CIFAR10     gelu_a     0.00         2.068979        0.061280        1.989842       0.026963          27.23           0.0
+1    VGG11  CIFAR10     gelu_a     0.25         2.056273        0.073411        1.966341       0.040858          27.72           0.0
+2    VGG11  CIFAR10     gelu_a     0.50         2.055820        0.078336        1.960280       0.046913          27.13           0.0
+3    VGG11  CIFAR10     gelu_a     1.00         2.027953        0.094850        1.915493       0.074312          29.17           0.0
+4    VGG11  CIFAR10     gelu_a     2.00         1.954702        0.138312        1.805760       0.085126          35.08           0.0
+5    VGG11  CIFAR10     gelu_a     5.00         1.860608        0.151280        1.701422       0.073600          38.51           0.0
+6    VGG11  CIFAR10     gelu_a  1000.00         1.923351        0.140839        1.766084       0.090517          36.07           0.0
+7    VGG11  CIFAR10     silu_a     0.00         2.067587        0.071044        1.975207       0.039389          27.68           0.0
+8    VGG11  CIFAR10     silu_a     0.25         2.053162        0.078552        1.957578       0.050142          28.41           0.0
+9    VGG11  CIFAR10     silu_a     0.50         2.051354        0.074989        1.956431       0.047173          27.80           0.0
+10   VGG11  CIFAR10     silu_a     1.00         2.042221        0.084142        1.942745       0.057617          28.79           0.0
+11   VGG11  CIFAR10     silu_a     2.00         1.996335        0.116519        1.862346       0.100756          33.65           0.0
+12   VGG11  CIFAR10     silu_a     5.00         1.897270        0.152614        1.752243       0.092699          37.60           0.0
+13   VGG11  CIFAR10     silu_a  1000.00         1.919112        0.142833        1.751735       0.099307          36.43           0.0
+
+=== Trial 1/1 ===
+
+Training ZAILU model with param=0...
+[Epoch 1/2] Train Loss: 2.1292
+[Epoch 1/2] Test Loss: 2.0183 | Accuracy: 25.97%
+[Epoch 2/2] Train Loss: 1.9984
+[Epoch 2/2] Test Loss: 1.9314 | Accuracy: 27.25%
+
+Training ZAILU model with param=0.25...
+[Epoch 1/2] Train Loss: 2.1416
+[Epoch 1/2] Test Loss: 2.0259 | Accuracy: 25.63%
+[Epoch 2/2] Train Loss: 2.0034
+[Epoch 2/2] Test Loss: 1.9500 | Accuracy: 27.12%
+
+Training ZAILU model with param=0.5...
+[Epoch 1/2] Train Loss: 2.1276
+[Epoch 1/2] Test Loss: 2.0111 | Accuracy: 24.76%
+[Epoch 2/2] Train Loss: 1.9672
+[Epoch 2/2] Test Loss: 1.8709 | Accuracy: 29.66%
+
+Training ZAILU model with param=1...
+[Epoch 1/2] Train Loss: 2.1127
+[Epoch 1/2] Test Loss: 1.9606 | Accuracy: 25.61%
+[Epoch 2/2] Train Loss: 1.8870
+[Epoch 2/2] Test Loss: 1.7986 | Accuracy: 31.87%
+
+Training ZAILU model with param=2...
+[Epoch 1/2] Train Loss: 2.1093
+[Epoch 1/2] Test Loss: 1.9480 | Accuracy: 25.05%
+[Epoch 2/2] Train Loss: 1.8653
+[Epoch 2/2] Test Loss: 1.7527 | Accuracy: 34.30%
+
+Training ZAILU model with param=5...
+[Epoch 1/2] Train Loss: 2.0828
+[Epoch 1/2] Test Loss: 1.8999 | Accuracy: 26.75%
+[Epoch 2/2] Train Loss: 1.8123
+[Epoch 2/2] Test Loss: 1.7250 | Accuracy: 33.30%
+
+Training ZAILU model with param=1000...
+[Epoch 1/2] Train Loss: 2.0632
+[Epoch 1/2] Test Loss: 1.8631 | Accuracy: 26.25%
+[Epoch 2/2] Train Loss: 1.7966
+[Epoch 2/2] Test Loss: 1.6823 | Accuracy: 36.11%
+
+Summary for ZAILU:
+  network  dataset activation    param  mean_train_loss  std_train_loss  mean_test_loss  std_test_loss  mean_accuracy  std_accuracy
+0   VGG11  CIFAR10      zailu     0.00         2.063846        0.065402        1.974876       0.043428          27.25           0.0
+1   VGG11  CIFAR10      zailu     0.25         2.072493        0.069133        1.987964       0.037968          27.12           0.0
+2   VGG11  CIFAR10      zailu     0.50         2.047427        0.080212        1.940989       0.070079          29.66           0.0
+3   VGG11  CIFAR10      zailu     1.00         1.999881        0.112855        1.879611       0.081029          31.87           0.0
+4   VGG11  CIFAR10      zailu     2.00         1.987268        0.121983        1.850319       0.097658          34.30           0.0
+5   VGG11  CIFAR10      zailu     5.00         1.947559        0.135272        1.812468       0.087475          33.30           0.0
+6   VGG11  CIFAR10      zailu  1000.00         1.929928        0.133281        1.772675       0.090403          36.11           0.0
+
+Combined summary across all activations:
+   network  dataset activation    param  mean_train_loss  std_train_loss  mean_test_loss  std_test_loss  mean_accuracy  std_accuracy
+0    VGG11  CIFAR10     gelu_a     0.00         2.068979        0.061280        1.989842       0.026963          27.23           0.0
+1    VGG11  CIFAR10     gelu_a     0.25         2.056273        0.073411        1.966341       0.040858          27.72           0.0
+2    VGG11  CIFAR10     gelu_a     0.50         2.055820        0.078336        1.960280       0.046913          27.13           0.0
+3    VGG11  CIFAR10     gelu_a     1.00         2.027953        0.094850        1.915493       0.074312          29.17           0.0
+4    VGG11  CIFAR10     gelu_a     2.00         1.954702        0.138312        1.805760       0.085126          35.08           0.0
+5    VGG11  CIFAR10     gelu_a     5.00         1.860608        0.151280        1.701422       0.073600          38.51           0.0
+6    VGG11  CIFAR10     gelu_a  1000.00         1.923351        0.140839        1.766084       0.090517          36.07           0.0
+7    VGG11  CIFAR10     silu_a     0.00         2.067587        0.071044        1.975207       0.039389          27.68           0.0
+8    VGG11  CIFAR10     silu_a     0.25         2.053162        0.078552        1.957578       0.050142          28.41           0.0
+9    VGG11  CIFAR10     silu_a     0.50         2.051354        0.074989        1.956431       0.047173          27.80           0.0
+10   VGG11  CIFAR10     silu_a     1.00         2.042221        0.084142        1.942745       0.057617          28.79           0.0
+11   VGG11  CIFAR10     silu_a     2.00         1.996335        0.116519        1.862346       0.100756          33.65           0.0
+12   VGG11  CIFAR10     silu_a     5.00         1.897270        0.152614        1.752243       0.092699          37.60           0.0
+13   VGG11  CIFAR10     silu_a  1000.00         1.919112        0.142833        1.751735       0.099307          36.43           0.0
+14   VGG11  CIFAR10      zailu     0.00         2.063846        0.065402        1.974876       0.043428          27.25           0.0
+15   VGG11  CIFAR10      zailu     0.25         2.072493        0.069133        1.987964       0.037968          27.12           0.0
+16   VGG11  CIFAR10      zailu     0.50         2.047427        0.080212        1.940989       0.070079          29.66           0.0
+17   VGG11  CIFAR10      zailu     1.00         1.999881        0.112855        1.879611       0.081029          31.87           0.0
+18   VGG11  CIFAR10      zailu     2.00         1.987268        0.121983        1.850319       0.097658          34.30           0.0
+19   VGG11  CIFAR10      zailu     5.00         1.947559        0.135272        1.812468       0.087475          33.30           0.0
+20   VGG11  CIFAR10      zailu  1000.00         1.929928        0.133281        1.772675       0.090403          36.11           0.0
+Total training time: 283.77 seconds

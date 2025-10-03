@@ -1,0 +1,98 @@
+Files already downloaded and verified
+Files already downloaded and verified
+
+=== Trial 1/1 ===
+
+Training RELU model...
+[Epoch 1/2] Train Loss: 1.7694
+[Epoch 1/2] Test Loss: 1.5626 | Accuracy: 44.99%
+[Epoch 2/2] Train Loss: 1.4882
+[Epoch 2/2] Test Loss: 1.4589 | Accuracy: 49.12%
+
+Training GELU model...
+[Epoch 1/2] Train Loss: 1.7998
+[Epoch 1/2] Test Loss: 1.6046 | Accuracy: 44.04%
+[Epoch 2/2] Train Loss: 1.5108
+[Epoch 2/2] Test Loss: 1.4591 | Accuracy: 48.65%
+
+Training SILU model...
+[Epoch 1/2] Train Loss: 1.8631
+[Epoch 1/2] Test Loss: 1.6492 | Accuracy: 42.50%
+[Epoch 2/2] Train Loss: 1.5882
+[Epoch 2/2] Test Loss: 1.5256 | Accuracy: 46.40%
+
+=== Trial 1/1 ===
+
+Training GELU_A model with a=0...
+[Epoch 1/2] Train Loss: 1.9933
+[Epoch 1/2] Test Loss: 1.8706 | Accuracy: 34.92%
+[Epoch 2/2] Train Loss: 1.8344
+[Epoch 2/2] Test Loss: 1.7966 | Accuracy: 37.96%
+
+Training GELU_A model with a=0.5...
+[Epoch 1/2] Train Loss: 1.9043
+[Epoch 1/2] Test Loss: 1.7082 | Accuracy: 40.05%
+[Epoch 2/2] Train Loss: 1.6305
+[Epoch 2/2] Test Loss: 1.5660 | Accuracy: 45.32%
+
+Training GELU_A model with a=1...
+[Epoch 1/2] Train Loss: 1.8030
+[Epoch 1/2] Test Loss: 1.5941 | Accuracy: 44.27%
+[Epoch 2/2] Train Loss: 1.5153
+[Epoch 2/2] Test Loss: 1.4707 | Accuracy: 48.22%
+
+Training GELU_A model with a=2...
+[Epoch 1/2] Train Loss: 1.7516
+[Epoch 1/2] Test Loss: 1.5440 | Accuracy: 45.38%
+[Epoch 2/2] Train Loss: 1.4648
+[Epoch 2/2] Test Loss: 1.4439 | Accuracy: 49.05%
+
+Training GELU_A model with a=5...
+[Epoch 1/2] Train Loss: 1.7380
+[Epoch 1/2] Test Loss: 1.5392 | Accuracy: 45.79%
+[Epoch 2/2] Train Loss: 1.4608
+[Epoch 2/2] Test Loss: 1.4367 | Accuracy: 48.72%
+
+Training GELU_A model with a=100...
+[Epoch 1/2] Train Loss: 1.7660
+[Epoch 1/2] Test Loss: 1.5570 | Accuracy: 45.03%
+[Epoch 2/2] Train Loss: 1.4902
+[Epoch 2/2] Test Loss: 1.4368 | Accuracy: 49.09%
+
+Training SILU_A model with a=0...
+[Epoch 1/2] Train Loss: 1.9970
+[Epoch 1/2] Test Loss: 1.8621 | Accuracy: 35.28%
+[Epoch 2/2] Train Loss: 1.8263
+[Epoch 2/2] Test Loss: 1.7877 | Accuracy: 37.68%
+
+Training SILU_A model with a=0.5...
+[Epoch 1/2] Train Loss: 1.9580
+[Epoch 1/2] Test Loss: 1.7873 | Accuracy: 37.02%
+[Epoch 2/2] Train Loss: 1.7126
+[Epoch 2/2] Test Loss: 1.6458 | Accuracy: 42.39%
+
+Training SILU_A model with a=1...
+[Epoch 1/2] Train Loss: 1.8901
+[Epoch 1/2] Test Loss: 1.6606 | Accuracy: 42.17%
+[Epoch 2/2] Train Loss: 1.5948
+[Epoch 2/2] Test Loss: 1.5228 | Accuracy: 46.82%
+
+Training SILU_A model with a=2...
+[Epoch 1/2] Train Loss: 1.8128
+[Epoch 1/2] Test Loss: 1.5882 | Accuracy: 43.88%
+[Epoch 2/2] Train Loss: 1.5068
+[Epoch 2/2] Test Loss: 1.4531 | Accuracy: 48.66%
+
+Training SILU_A model with a=5...
+[Epoch 1/2] Train Loss: 1.7515
+[Epoch 1/2] Test Loss: 1.5505 | Accuracy: 45.13%
+[Epoch 2/2] Train Loss: 1.4633
+[Epoch 2/2] Test Loss: 1.4552 | Accuracy: 48.60%
+
+Training SILU_A model with a=100...
+[Epoch 1/2] Train Loss: 1.7478
+[Epoch 1/2] Test Loss: 1.5575 | Accuracy: 44.16%
+[Epoch 2/2] Train Loss: 1.4827
+[Epoch 2/2] Test Loss: 1.4601 | Accuracy: 48.43%
+Total training time: 370.62 seconds
+All parametric activation plots (loss + avg accuracy) saved in 'plots'

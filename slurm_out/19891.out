@@ -1,0 +1,247 @@
+Files already downloaded and verified
+Files already downloaded and verified
+
+=== Trial 1/1 ===
+
+Training GELU_A model with param=0...
+[Epoch 1/5] Train Loss: 1.9819
+[Epoch 1/5] Test Loss: 1.8704 | Accuracy: 35.72%
+[Epoch 2/5] Train Loss: 1.8403
+[Epoch 2/5] Test Loss: 1.8094 | Accuracy: 37.84%
+[Epoch 3/5] Train Loss: 1.7967
+[Epoch 3/5] Test Loss: 1.7807 | Accuracy: 38.78%
+[Epoch 4/5] Train Loss: 1.7714
+[Epoch 4/5] Test Loss: 1.7609 | Accuracy: 39.45%
+[Epoch 5/5] Train Loss: 1.7540
+[Epoch 5/5] Test Loss: 1.7505 | Accuracy: 39.66%
+
+Training GELU_A model with param=0.25...
+[Epoch 1/5] Train Loss: 1.9544
+[Epoch 1/5] Test Loss: 1.8044 | Accuracy: 37.44%
+[Epoch 2/5] Train Loss: 1.7515
+[Epoch 2/5] Test Loss: 1.7005 | Accuracy: 40.85%
+[Epoch 3/5] Train Loss: 1.6731
+[Epoch 3/5] Test Loss: 1.6463 | Accuracy: 43.31%
+[Epoch 4/5] Train Loss: 1.6224
+[Epoch 4/5] Test Loss: 1.6077 | Accuracy: 44.39%
+[Epoch 5/5] Train Loss: 1.5829
+[Epoch 5/5] Test Loss: 1.5776 | Accuracy: 45.53%
+
+Training GELU_A model with param=0.5...
+[Epoch 1/5] Train Loss: 1.9240
+[Epoch 1/5] Test Loss: 1.7435 | Accuracy: 39.18%
+[Epoch 2/5] Train Loss: 1.6910
+[Epoch 2/5] Test Loss: 1.6414 | Accuracy: 43.08%
+[Epoch 3/5] Train Loss: 1.6082
+[Epoch 3/5] Test Loss: 1.5875 | Accuracy: 44.66%
+[Epoch 4/5] Train Loss: 1.5534
+[Epoch 4/5] Test Loss: 1.5464 | Accuracy: 46.01%
+[Epoch 5/5] Train Loss: 1.5101
+[Epoch 5/5] Test Loss: 1.5194 | Accuracy: 46.70%
+
+Training GELU_A model with param=1...
+[Epoch 1/5] Train Loss: 1.9246
+[Epoch 1/5] Test Loss: 1.7424 | Accuracy: 39.86%
+[Epoch 2/5] Train Loss: 1.6725
+[Epoch 2/5] Test Loss: 1.6307 | Accuracy: 43.64%
+[Epoch 3/5] Train Loss: 1.5754
+[Epoch 3/5] Test Loss: 1.5611 | Accuracy: 46.00%
+[Epoch 4/5] Train Loss: 1.5113
+[Epoch 4/5] Test Loss: 1.5228 | Accuracy: 47.30%
+[Epoch 5/5] Train Loss: 1.4609
+[Epoch 5/5] Test Loss: 1.4902 | Accuracy: 48.13%
+
+Training GELU_A model with param=2...
+[Epoch 1/5] Train Loss: 1.9107
+[Epoch 1/5] Test Loss: 1.7215 | Accuracy: 39.81%
+[Epoch 2/5] Train Loss: 1.6633
+[Epoch 2/5] Test Loss: 1.6147 | Accuracy: 44.23%
+[Epoch 3/5] Train Loss: 1.5650
+[Epoch 3/5] Test Loss: 1.5493 | Accuracy: 46.10%
+[Epoch 4/5] Train Loss: 1.4977
+[Epoch 4/5] Test Loss: 1.5087 | Accuracy: 47.55%
+[Epoch 5/5] Train Loss: 1.4441
+[Epoch 5/5] Test Loss: 1.4783 | Accuracy: 48.31%
+
+Training GELU_A model with param=100...
+[Epoch 1/5] Train Loss: 1.9463
+[Epoch 1/5] Test Loss: 1.7558 | Accuracy: 38.74%
+[Epoch 2/5] Train Loss: 1.6878
+[Epoch 2/5] Test Loss: 1.6360 | Accuracy: 43.23%
+[Epoch 3/5] Train Loss: 1.5912
+[Epoch 3/5] Test Loss: 1.5715 | Accuracy: 45.51%
+[Epoch 4/5] Train Loss: 1.5279
+[Epoch 4/5] Test Loss: 1.5299 | Accuracy: 46.46%
+[Epoch 5/5] Train Loss: 1.4789
+[Epoch 5/5] Test Loss: 1.4996 | Accuracy: 47.79%
+
+Training GELU_A model with param=1000...
+[Epoch 1/5] Train Loss: 1.9596
+[Epoch 1/5] Test Loss: 1.7791 | Accuracy: 38.76%
+[Epoch 2/5] Train Loss: 1.7030
+[Epoch 2/5] Test Loss: 1.6514 | Accuracy: 43.67%
+[Epoch 3/5] Train Loss: 1.5981
+[Epoch 3/5] Test Loss: 1.5818 | Accuracy: 45.54%
+[Epoch 4/5] Train Loss: 1.5297
+[Epoch 4/5] Test Loss: 1.5402 | Accuracy: 46.85%
+[Epoch 5/5] Train Loss: 1.4772
+[Epoch 5/5] Test Loss: 1.5108 | Accuracy: 47.54%
+
+Training SILU_A model with param=0...
+[Epoch 1/5] Train Loss: 2.0075
+[Epoch 1/5] Test Loss: 1.8790 | Accuracy: 35.57%
+[Epoch 2/5] Train Loss: 1.8439
+[Epoch 2/5] Test Loss: 1.8136 | Accuracy: 37.70%
+[Epoch 3/5] Train Loss: 1.8006
+[Epoch 3/5] Test Loss: 1.7846 | Accuracy: 38.18%
+[Epoch 4/5] Train Loss: 1.7765
+[Epoch 4/5] Test Loss: 1.7653 | Accuracy: 39.24%
+[Epoch 5/5] Train Loss: 1.7587
+[Epoch 5/5] Test Loss: 1.7537 | Accuracy: 39.99%
+
+Training SILU_A model with param=0.25...
+[Epoch 1/5] Train Loss: 1.9709
+[Epoch 1/5] Test Loss: 1.8344 | Accuracy: 36.14%
+[Epoch 2/5] Train Loss: 1.7863
+[Epoch 2/5] Test Loss: 1.7416 | Accuracy: 39.44%
+[Epoch 3/5] Train Loss: 1.7124
+[Epoch 3/5] Test Loss: 1.6817 | Accuracy: 41.22%
+[Epoch 4/5] Train Loss: 1.6624
+[Epoch 4/5] Test Loss: 1.6457 | Accuracy: 42.51%
+[Epoch 5/5] Train Loss: 1.6272
+[Epoch 5/5] Test Loss: 1.6200 | Accuracy: 43.57%
+
+Training SILU_A model with param=0.5...
+[Epoch 1/5] Train Loss: 1.9381
+[Epoch 1/5] Test Loss: 1.7849 | Accuracy: 37.78%
+[Epoch 2/5] Train Loss: 1.7297
+[Epoch 2/5] Test Loss: 1.6769 | Accuracy: 41.99%
+[Epoch 3/5] Train Loss: 1.6488
+[Epoch 3/5] Test Loss: 1.6219 | Accuracy: 44.02%
+[Epoch 4/5] Train Loss: 1.5973
+[Epoch 4/5] Test Loss: 1.5858 | Accuracy: 44.96%
+[Epoch 5/5] Train Loss: 1.5567
+[Epoch 5/5] Test Loss: 1.5549 | Accuracy: 46.02%
+
+Training SILU_A model with param=1...
+[Epoch 1/5] Train Loss: 1.9146
+[Epoch 1/5] Test Loss: 1.7451 | Accuracy: 40.08%
+[Epoch 2/5] Train Loss: 1.6854
+[Epoch 2/5] Test Loss: 1.6377 | Accuracy: 43.59%
+[Epoch 3/5] Train Loss: 1.5987
+[Epoch 3/5] Test Loss: 1.5830 | Accuracy: 45.30%
+[Epoch 4/5] Train Loss: 1.5410
+[Epoch 4/5] Test Loss: 1.5460 | Accuracy: 46.36%
+[Epoch 5/5] Train Loss: 1.4958
+[Epoch 5/5] Test Loss: 1.5160 | Accuracy: 47.51%
+
+Training SILU_A model with param=2...
+[Epoch 1/5] Train Loss: 1.9175
+[Epoch 1/5] Test Loss: 1.7268 | Accuracy: 40.70%
+[Epoch 2/5] Train Loss: 1.6570
+[Epoch 2/5] Test Loss: 1.6186 | Accuracy: 44.03%
+[Epoch 3/5] Train Loss: 1.5663
+[Epoch 3/5] Test Loss: 1.5589 | Accuracy: 45.86%
+[Epoch 4/5] Train Loss: 1.5059
+[Epoch 4/5] Test Loss: 1.5189 | Accuracy: 47.38%
+[Epoch 5/5] Train Loss: 1.4569
+[Epoch 5/5] Test Loss: 1.4869 | Accuracy: 48.37%
+
+Training SILU_A model with param=100...
+[Epoch 1/5] Train Loss: 1.9620
+[Epoch 1/5] Test Loss: 1.7790 | Accuracy: 38.20%
+[Epoch 2/5] Train Loss: 1.7010
+[Epoch 2/5] Test Loss: 1.6520 | Accuracy: 42.81%
+[Epoch 3/5] Train Loss: 1.5973
+[Epoch 3/5] Test Loss: 1.5876 | Accuracy: 44.93%
+[Epoch 4/5] Train Loss: 1.5327
+[Epoch 4/5] Test Loss: 1.5473 | Accuracy: 46.05%
+[Epoch 5/5] Train Loss: 1.4833
+[Epoch 5/5] Test Loss: 1.5161 | Accuracy: 47.00%
+
+Training SILU_A model with param=1000...
+[Epoch 1/5] Train Loss: 1.9344
+[Epoch 1/5] Test Loss: 1.7555 | Accuracy: 38.79%
+[Epoch 2/5] Train Loss: 1.6914
+[Epoch 2/5] Test Loss: 1.6406 | Accuracy: 42.66%
+[Epoch 3/5] Train Loss: 1.5962
+[Epoch 3/5] Test Loss: 1.5831 | Accuracy: 44.79%
+[Epoch 4/5] Train Loss: 1.5310
+[Epoch 4/5] Test Loss: 1.5432 | Accuracy: 45.87%
+[Epoch 5/5] Train Loss: 1.4795
+[Epoch 5/5] Test Loss: 1.5095 | Accuracy: 46.83%
+
+=== Trial 1/1 ===
+
+Training ZAILU model with param=0...
+[Epoch 1/5] Train Loss: 1.9876
+[Epoch 1/5] Test Loss: 1.8726 | Accuracy: 35.57%
+[Epoch 2/5] Train Loss: 1.8441
+[Epoch 2/5] Test Loss: 1.8130 | Accuracy: 37.96%
+[Epoch 3/5] Train Loss: 1.8015
+[Epoch 3/5] Test Loss: 1.7829 | Accuracy: 38.80%
+[Epoch 4/5] Train Loss: 1.7762
+[Epoch 4/5] Test Loss: 1.7646 | Accuracy: 39.72%
+[Epoch 5/5] Train Loss: 1.7587
+[Epoch 5/5] Test Loss: 1.7504 | Accuracy: 40.05%
+
+Training ZAILU model with param=0.5...
+[Epoch 1/5] Train Loss: 1.9408
+[Epoch 1/5] Test Loss: 1.7741 | Accuracy: 38.25%
+[Epoch 2/5] Train Loss: 1.7201
+[Epoch 2/5] Test Loss: 1.6679 | Accuracy: 42.20%
+[Epoch 3/5] Train Loss: 1.6398
+[Epoch 3/5] Test Loss: 1.6141 | Accuracy: 44.04%
+[Epoch 4/5] Train Loss: 1.5882
+[Epoch 4/5] Test Loss: 1.5759 | Accuracy: 45.35%
+[Epoch 5/5] Train Loss: 1.5490
+[Epoch 5/5] Test Loss: 1.5467 | Accuracy: 46.01%
+
+Training ZAILU model with param=1...
+[Epoch 1/5] Train Loss: 1.9244
+[Epoch 1/5] Test Loss: 1.7503 | Accuracy: 39.85%
+[Epoch 2/5] Train Loss: 1.6956
+[Epoch 2/5] Test Loss: 1.6536 | Accuracy: 42.96%
+[Epoch 3/5] Train Loss: 1.6153
+[Epoch 3/5] Test Loss: 1.5930 | Accuracy: 45.37%
+[Epoch 4/5] Train Loss: 1.5617
+[Epoch 4/5] Test Loss: 1.5569 | Accuracy: 46.68%
+[Epoch 5/5] Train Loss: 1.5191
+[Epoch 5/5] Test Loss: 1.5266 | Accuracy: 47.46%
+
+Training ZAILU model with param=2...
+[Epoch 1/5] Train Loss: 1.9156
+[Epoch 1/5] Test Loss: 1.7379 | Accuracy: 39.87%
+[Epoch 2/5] Train Loss: 1.6667
+[Epoch 2/5] Test Loss: 1.6194 | Accuracy: 43.87%
+[Epoch 3/5] Train Loss: 1.5748
+[Epoch 3/5] Test Loss: 1.5588 | Accuracy: 46.06%
+[Epoch 4/5] Train Loss: 1.5151
+[Epoch 4/5] Test Loss: 1.5172 | Accuracy: 47.46%
+[Epoch 5/5] Train Loss: 1.4687
+[Epoch 5/5] Test Loss: 1.4895 | Accuracy: 48.36%
+
+Training ZAILU model with param=5...
+[Epoch 1/5] Train Loss: 1.9214
+[Epoch 1/5] Test Loss: 1.7308 | Accuracy: 39.78%
+[Epoch 2/5] Train Loss: 1.6675
+[Epoch 2/5] Test Loss: 1.6169 | Accuracy: 44.02%
+[Epoch 3/5] Train Loss: 1.5752
+[Epoch 3/5] Test Loss: 1.5610 | Accuracy: 45.70%
+[Epoch 4/5] Train Loss: 1.5139
+[Epoch 4/5] Test Loss: 1.5212 | Accuracy: 46.88%
+[Epoch 5/5] Train Loss: 1.4644
+[Epoch 5/5] Test Loss: 1.4873 | Accuracy: 47.99%
+
+Training ZAILU model with param=100...
+[Epoch 1/5] Train Loss: 1.9349
+[Epoch 1/5] Test Loss: 1.7500 | Accuracy: 39.20%
+[Epoch 2/5] Train Loss: 1.6784
+[Epoch 2/5] Test Loss: 1.6253 | Accuracy: 43.44%
+[Epoch 3/5] Train Loss: 1.5779
+[Epoch 3/5] Test Loss: 1.5652 | Accuracy: 45.58%
+[Epoch 4/5] Train Loss: 1.5150
+[Epoch 4/5] Test Loss: 1.5212 | Accuracy: 46.79%
+[Epoch 5/5] Train Loss: 1.4662
+[Epoch 5/5] Test Loss: 1.4895 | Accuracy: 48.41%
+Total training time: 1267.76 seconds

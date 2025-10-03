@@ -1,0 +1,25 @@
+Files already downloaded and verified
+Files already downloaded and verified
+
+=== Trial 1/5 ===
+
+Training RELU model...
+Traceback (most recent call last):
+  File "/home/zyang/IS/test.py", line 297, in <module>
+    results_baseline = run_experiments(
+                       ^^^^^^^^^^^^^^^^
+  File "/home/zyang/IS/test.py", line 180, in run_experiments
+    model = MLP(act).to(mps_device)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/local/python3.12/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1173, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/local/python3.12/lib/python3.12/site-packages/torch/nn/modules/module.py", line 779, in _apply
+    module._apply(fn)
+  File "/mnt/local/python3.12/lib/python3.12/site-packages/torch/nn/modules/module.py", line 804, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/mnt/local/python3.12/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1159, in convert
+    return t.to(
+           ^^^^^
+RuntimeError: PyTorch is not linked with support for mps devices
