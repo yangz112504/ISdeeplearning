@@ -71,21 +71,20 @@ mps_device = torch.device("cuda")
 
 transform = transforms.Compose([
     transforms.ToTensor(),
-    transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+    transforms.Normalize((0.5071, 0.4867, 0.4408),(0.2675, 0.2565, 0.2761))
 ])
 
 batch_size = 64
-trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)
+trainset = torchvision.datasets.CIFAR100(root='./data', train=True, download=True, transform=transform)
 trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuffle=True, num_workers=4)
 
-testset = torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=transform)
+testset = torchvision.datasets.CIFAR100(root='./data', train=False, download=True, transform=transform)
 testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=4)
 
-#add Vgg16 but don't replace Vgg11
 
 # ---------------- Model Definitions ---------------- #
 class Vgg11(nn.Module):
-    def __init__(self, act_fun="relu", num_classes=10, param=None):
+    def __init__(self, act_fun="relu", num_classes=100, param=None):
         super(Vgg11, self).__init__()
         self.param = param
         self.act_fun = self._get_act_fun(act_fun)
@@ -167,7 +166,7 @@ class MLP(nn.Module):
         self.fc2 = nn.Linear(512, 256)
         self.fc3 = nn.Linear(256, 128)
         self.fc4 = nn.Linear(128, 64)
-        self.fc5 = nn.Linear(64, 10)
+        self.fc5 = nn.Linear(64, 100)
 
         self.param = param if param is not None else 1
         if act_fun == "relu":
@@ -212,7 +211,7 @@ def zailu(x, s=1):
 
 # ---------------- Experiment Runner ---------------- #
 def run_experiments(activations, params=None, num_trials=5, epochs=20, save_dir="results",
-                    network_name="MLP", dataset_name="CIFAR10", last_n_epochs=10, use_mlp=True):
+                    network_name="MLP", dataset_name="CIFAR100", last_n_epochs=10, use_mlp=True):
     os.makedirs(save_dir, exist_ok=True)
     all_results = {}
 
@@ -364,7 +363,7 @@ results_param_zailu, summary_df_zailu = run_experiments(
 plot_results(results_param_zailu, epochs=epochs)
 
 summary_df_all = pd.concat([summary_df_as, summary_df_zailu], ignore_index=True)
-summary_df_all.to_csv("results/VGG11_CIFAR10_all_summary.csv", index=False)
+summary_df_all.to_csv("results/VGG11_CIFAR100_all_summary.csv", index=False)
 
 print("\nCombined summary across all activations:")
 print(summary_df_all)
