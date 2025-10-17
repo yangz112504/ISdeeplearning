@@ -11,13 +11,14 @@ import time
 
 LARGE = 1000  # threshold for switching to ReLU behavior
 
-# Training Function
+# ---------------- Training Function ---------------- #
 def train_net(model, epochs=10):
     criterion = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-5)
 
     epoch_loss_train = []
     epoch_loss_test = []
+    epoch_accs = []   # <-- track accuracy for each epoch
 
     for epoch in range(epochs):
         # --- Training ---
@@ -58,12 +59,13 @@ def train_net(model, epochs=10):
         epoch_loss_test.append(avg_test_loss)
 
         accuracy = 100 * correct / total
+        epoch_accs.append(accuracy)   # <-- store accuracy per epoch
         print(f"[Epoch {epoch+1}/{epochs}] Test Loss: {avg_test_loss:.4f} | Accuracy: {accuracy:.2f}%")
 
-    return epoch_loss_train, epoch_loss_test, accuracy
+    return epoch_loss_train, epoch_loss_test, epoch_accs
 
 
-# Dataset Setup
+# ---------------- Dataset Setup ---------------- #
 mps_device = torch.device("mps") if torch.backends.mps.is_available() else torch.device("cpu")
 mps_device = torch.device("cuda")
 
@@ -79,37 +81,47 @@ trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuff
 testset = torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=transform)
 testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=4)
 
-# Model Definitions
-class Vgg11(nn.Module):
+#add Vgg16
+class Vgg16(nn.Module):
     def __init__(self, act_fun="relu", num_classes=10, param=None):
-        super(Vgg11, self).__init__()
+        super(Vgg16, self).__init__()
         self.param = param
         self.act_fun = self._get_act_fun(act_fun)
 
         self.features = nn.Sequential(
-            nn.Conv2d(3, 64, kernel_size=3, padding=1), #64 channels, 3x3 kernel, 64 kernels
+            nn.Conv2d(3, 64, kernel_size=3, padding=1),
             nn.ReLU(inplace=True),
-            nn.MaxPool2d(kernel_size=2, stride=2), #divides the dimensions by 2, going from 32x32 to 16x16
-
-            nn.Conv2d(64, 128, kernel_size=3, padding=1), #128 channels, 3x3 kernel, 128 kernels
+            nn.Conv2d(64, 64, kernel_size=3, padding=1),
             nn.ReLU(inplace=True),
             nn.MaxPool2d(kernel_size=2, stride=2),
 
-            nn.Conv2d(128, 256, kernel_size=3, padding=1), #256 channels, 3x3 kernel, 256 kernels
+            nn.Conv2d(64, 128, kernel_size=3, padding=1),
             nn.ReLU(inplace=True),
-            nn.Conv2d(256, 256, kernel_size=3, padding=1), 
-            nn.ReLU(inplace=True),
-            nn.MaxPool2d(kernel_size=2, stride=2),
-
-            nn.Conv2d(256, 512, kernel_size=3, padding=1), 
-            nn.ReLU(inplace=True),
-            nn.Conv2d(512, 512, kernel_size=3, padding=1), 
+            nn.Conv2d(128, 128, kernel_size=3, padding=1),
             nn.ReLU(inplace=True),
             nn.MaxPool2d(kernel_size=2, stride=2),
 
-            nn.Conv2d(512, 512, kernel_size=3, padding=1), 
+            nn.Conv2d(128, 256, kernel_size=3, padding=1),
             nn.ReLU(inplace=True),
-            nn.Conv2d(512, 512, kernel_size=3, padding=1), 
+            nn.Conv2d(256, 256, kernel_size=3, padding=1),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(256, 256, kernel_size=3, padding=1),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(kernel_size=2, stride=2),
+
+            nn.Conv2d(256, 512, kernel_size=3, padding=1),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(512, 512, kernel_size=3, padding=1),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(512, 512, kernel_size=3, padding=1),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(kernel_size=2, stride=2),
+
+            nn.Conv2d(512, 512, kernel_size=3, padding=1),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(512, 512, kernel_size=3, padding=1),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(512, 512, kernel_size=3, padding=1),
             nn.ReLU(inplace=True),
             nn.MaxPool2d(kernel_size=2, stride=2)
         )
@@ -139,7 +151,7 @@ class Vgg11(nn.Module):
             return lambda x: zailu(x, self.param)
         else:
             return F.relu
-
+    
     # Once I get to the ReLU layers, I will apply the custom activation function instead
     def forward(self, x):
         for layer in self.features:
@@ -156,39 +168,7 @@ class Vgg11(nn.Module):
                 x = layer(x)
         return x
 
-
-class MLP(nn.Module):
-    def __init__(self, act_fun, param=None):
-        super().__init__()
-        self.fc1 = nn.Linear(32*32*3, 512)
-        self.fc2 = nn.Linear(512, 256)
-        self.fc3 = nn.Linear(256, 128)
-        self.fc4 = nn.Linear(128, 64)
-        self.fc5 = nn.Linear(64, 10)
-
-        self.param = param if param is not None else 1
-        if act_fun == "relu":
-            self.act_fun = F.relu
-        elif act_fun == "gelu":
-            self.act_fun = F.gelu
-        elif act_fun == "silu":
-            self.act_fun = F.silu
-        elif act_fun == "gelu_a":
-            self.act_fun = lambda x: gelu_a(x, self.param)
-        elif act_fun == "silu_a":
-            self.act_fun = lambda x: silu_a(x, self.param)
-        elif act_fun == "zailu":
-            self.act_fun = lambda x: zailu(x, self.param)
-
-    def forward(self, x):
-        x = torch.flatten(x, 1)
-        x = self.act_fun(self.fc1(x))
-        x = self.act_fun(self.fc2(x))
-        x = self.act_fun(self.fc3(x))
-        x = self.act_fun(self.fc4(x))
-        return self.fc5(x)
-
-# Custom Activation Functions
+# ---------------- Custom Activations ---------------- #
 def gelu_a(x, a=1):
     if a >= LARGE:
         return F.relu(x)
@@ -200,13 +180,12 @@ def silu_a(x, a=1):
         return F.relu(x)
     return x * torch.sigmoid(a * x)
 
-def zailu(x, s=1):
-    if s >= LARGE:
-        return F.relu(x)
-    return x * (2 * (1/4 + 1/(2 * torch.pi) * torch.arctan(s * x)))
+def zailu(x, sigma=1.0):
+    z = sigma * x
+    return x * 0.5 * (1 + 2 * F.relu(z)) / (1 + torch.abs(z))
 
 
-# Experiment Runner
+# ---------------- Experiment Runner ---------------- #
 def run_experiments(activations, params=None, num_trials=5, epochs=20, save_dir="results",
                     network_name="MLP", dataset_name="CIFAR10", last_n_epochs=10, use_mlp=True):
     os.makedirs(save_dir, exist_ok=True)
@@ -220,20 +199,16 @@ def run_experiments(activations, params=None, num_trials=5, epochs=20, save_dir=
                 for p in params:
                     print(f"\nTraining {act.upper()} model with param={p}...")
 
-                    # Choose model based on flag
-                    if use_mlp:
-                        model = MLP(act, param=p).to(mps_device)
-                        net_name = "MLP"
-                    else:
-                        model = Vgg11(act_fun=act, param=p).to(mps_device)
-                        net_name = "VGG11"
+                    # Choose model
+                    model = Vgg16(act_fun=act, param=p).to(mps_device)
+                    net_name = "VGG16"
 
-                    # Xavier init for linear layers only (skip convs in VGG)
+                    # Xavier init
                     for layer in model.modules():
                         if isinstance(layer, nn.Linear):
                             torch.nn.init.xavier_uniform_(layer.weight)
 
-                    train_losses, test_losses, acc = train_net(model, epochs=epochs)
+                    train_losses, test_losses, accs = train_net(model, epochs=epochs)
 
                     key = f"{act}_param{p}"
                     if key not in all_results:
@@ -241,14 +216,15 @@ def run_experiments(activations, params=None, num_trials=5, epochs=20, save_dir=
 
                     all_results[key]["train_losses"].append(train_losses)
                     all_results[key]["test_losses"].append(test_losses)
-                    all_results[key]["accuracies"].append(acc)
+                    all_results[key]["accuracies"].append(accs[-1])  # final accuracy
 
+                    # Save per-trial results (per epoch)
                     df = pd.DataFrame({
                         "epoch": list(range(1, epochs+1)),
                         "train_loss": train_losses,
-                        "test_loss": test_losses
+                        "test_loss": test_losses,
+                        "accuracy": accs   # <-- per-epoch accuracy
                     })
-                    df["final_accuracy"] = acc
                     df.to_csv(f"{save_dir}/{net_name}_{key}_trial{trial+1}.csv", index=False)
 
     # Summary stats
@@ -277,7 +253,7 @@ def run_experiments(activations, params=None, num_trials=5, epochs=20, save_dir=
     return all_results, summary_df
 
 
-# Plotting Function
+# ---------------- Plotting ---------------- #
 def plot_results(all_results, epochs=20, save_dir="plots"):
     os.makedirs(save_dir, exist_ok=True)
 
@@ -328,7 +304,7 @@ def plot_results(all_results, epochs=20, save_dir="plots"):
         plt.close()
 
 
-# Main
+# ---------------- Main ---------------- #
 num_trials = 3
 epochs = 100
 a_values = [0, 0.25, 0.5, 1, 2, 5, 1000]
@@ -343,7 +319,7 @@ results_param_as, summary_df_as = run_experiments(
     num_trials=num_trials,
     epochs=epochs,
     save_dir="results",
-    use_mlp=False  # change to True to train MLP instead
+    use_mlp=False
 )
 plot_results(results_param_as, epochs=epochs)
 
@@ -359,11 +335,8 @@ results_param_zailu, summary_df_zailu = run_experiments(
 plot_results(results_param_zailu, epochs=epochs)
 
 summary_df_all = pd.concat([summary_df_as, summary_df_zailu], ignore_index=True)
-
-# Save to one CSV
-summary_df_all.to_csv("results/VGG11_CIFAR10_all_summary.csv", index=False)
+summary_df_all.to_csv("results/VGG16_CIFAR10_all_summary.csv", index=False)
 
 print("\nCombined summary across all activations:")
 print(summary_df_all)
-
 print(f"Total training time: {time.time() - t_start:.2f} seconds")

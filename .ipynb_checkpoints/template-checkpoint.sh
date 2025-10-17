@@ -9,4 +9,4 @@
 
 cd /home/zyang/IS
 
-python test100.py
+python test.py
