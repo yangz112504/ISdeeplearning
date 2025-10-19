@@ -1,0 +1,14 @@
+✅ CUDA available: NVIDIA A100 80GB PCIe
+Using devices: [device(type='cpu'), device(type='cuda')]
+elu (cpu): 0.035175s
+hardshrink (cpu): 0.023230s
+hardsigmoid (cpu): 0.025162s
+hardtanh (cpu): 0.041140s
+hardswish (cpu): 0.027561s
+leaky_relu (cpu): 0.030534s
+logsigmoid (cpu): 0.064841s
+Traceback (most recent call last):
+  File "/home/zyang/IS/cudaVsCpu.py", line 85, in <module>
+    _ = func(x_device)
+        ^^^^^^^^^^^^^^
+TypeError: prelu() missing 1 required positional arguments: "weight"

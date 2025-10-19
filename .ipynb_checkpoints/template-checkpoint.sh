@@ -9,4 +9,4 @@
 
 cd /home/zyang/IS
 
-python test.py
+python cudaVsCpu.py
