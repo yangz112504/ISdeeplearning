@@ -1,0 +1,97 @@
+✅ CUDA available: NVIDIA A100 80GB PCIe
+Using devices: [device(type='cpu'), device(type='cuda')]
+elu (cpu): 0.033989s
+hardshrink (cpu): 0.022109s
+hardsigmoid (cpu): 0.025669s
+hardtanh (cpu): 0.041542s
+hardswish (cpu): 0.031820s
+leaky_relu (cpu): 0.032377s
+logsigmoid (cpu): 0.074773s
+prelu (cpu): 0.088473s
+relu (cpu): 0.025143s
+relu6 (cpu): 0.033724s
+rrelu (cpu): 0.118428s
+selu (cpu): 0.030117s
+celu (cpu): 0.035980s
+gelu (cpu): 0.137033s
+sigmoid (cpu): 0.033303s
+silu (cpu): 0.031141s
+mish (cpu): 0.114956s
+softplus (cpu): 0.043208s
+softshrink (cpu): 0.023033s
+softsign (cpu): 0.117296s
+tanh (cpu): 0.027718s
+tanhshrink (cpu): 0.052364s
+threshold (cpu): 0.054620s
+glu (cpu): 0.051004s
+identity (cpu): 0.001086s
+zailuApprox (cpu): 0.349704s
+zailuNormal (cpu): 0.280329s
+squareplus (cpu): 0.200134s
+swish (cpu): 0.057553s
+elu (cuda): 0.080612s
+hardshrink (cuda): 0.069138s
+hardsigmoid (cuda): 0.071628s
+hardtanh (cuda): 0.102757s
+hardswish (cuda): 0.076633s
+leaky_relu (cuda): 0.079593s
+logsigmoid (cuda): 0.084741s
+prelu (cuda): 0.306389s
+relu (cuda): 0.082028s
+relu6 (cuda): 0.096497s
+rrelu (cuda): 0.117739s
+selu (cuda): 0.073412s
+celu (cuda): 0.082347s
+gelu (cuda): 0.067835s
+sigmoid (cuda): 0.065624s
+silu (cuda): 0.070206s
+mish (cuda): 0.095308s
+softplus (cuda): 0.069965s
+softshrink (cuda): 0.069638s
+softsign (cuda): 0.243763s
+tanh (cuda): 0.069325s
+tanhshrink (cuda): 0.140218s
+threshold (cuda): 0.110624s
+glu (cuda): 0.101846s
+identity (cuda): 0.001109s
+zailuApprox (cuda): 0.655656s
+zailuNormal (cuda): 0.401978s
+squareplus (cuda): 0.375034s
+swish (cuda): 0.134015s
+
+✅ Saved raw benchmark data to activation_benchmarks_raw.csv
+
+=== Formatted Results (ms per 10k runs) ===
+device           CPU  GPU (CUDA)
+activation                      
+identity       1.086       1.109
+hardshrink    22.109      69.138
+softshrink    23.033      69.638
+relu          25.143      82.028
+hardsigmoid   25.669      71.628
+tanh          27.718      69.325
+selu          30.117      73.412
+silu          31.141      70.206
+hardswish     31.820      76.633
+leaky_relu    32.377      79.593
+sigmoid       33.303      65.624
+relu6         33.724      96.497
+elu           33.989      80.612
+celu          35.980      82.347
+hardtanh      41.542     102.757
+softplus      43.208      69.965
+glu           51.004     101.846
+tanhshrink    52.364     140.218
+threshold     54.620     110.624
+swish         57.553     134.015
+logsigmoid    74.773      84.741
+prelu         88.473     306.389
+mish         114.956      95.308
+softsign     117.296     243.763
+rrelu        118.428     117.739
+gelu         137.033      67.835
+squareplus   200.134     375.034
+zailuNormal  280.329     401.978
+zailuApprox  349.704     655.656
+
+✅ Saved formatted table to activation_benchmarks_formatted.csv

@@ -118,6 +118,9 @@ pivot = pivot.rename(columns=rename_map)
 
 pivot = pivot.round(3).sort_values("CPU")
 
+# Add " ms" suffix to all numeric entries
+pivot = pivot.applymap(lambda x: f"{x:.3f} ms" if pd.notna(x) else "")
+
 print("\n=== Formatted Results (ms per 10k runs) ===")
 print(pivot)
 
