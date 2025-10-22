@@ -1,0 +1,24 @@
+/home/zyang/IS/cudaVsCpu.py:122: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+  pivot = pivot.applymap(lambda x: f"{x:.3f} ms" if pd.notna(x) else "")
+✅ CUDA available: NVIDIA GeForce RTX 3080
+Using devices: [device(type='cpu'), device(type='cuda')]
+zailuApprox (cpu): 0.617327s
+zailuNormal (cpu): 0.515058s
+squareplus (cpu): 0.362866s
+swish (cpu): 0.102653s
+zailuApprox (cuda): 1.108499s
+zailuNormal (cuda): 0.688205s
+squareplus (cuda): 0.649125s
+swish (cuda): 0.234023s
+
+✅ Saved raw benchmark data to activation_benchmarks_raw.csv
+
+=== Formatted Results (ms per 10k runs) ===
+device              CPU   GPU (CUDA)
+activation                          
+swish        102.653 ms   234.023 ms
+squareplus   362.866 ms   649.125 ms
+zailuNormal  515.058 ms   688.205 ms
+zailuApprox  617.327 ms  1108.499 ms
+
+✅ Saved formatted table to activation_benchmarks_formatted.csv

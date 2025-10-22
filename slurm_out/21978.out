@@ -1,0 +1,99 @@
+/home/zyang/IS/cudaVsCpu.py:122: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+  pivot = pivot.applymap(lambda x: f"{x:.3f} ms" if pd.notna(x) else "")
+✅ CUDA available: NVIDIA GeForce RTX 3080
+Using devices: [device(type='cpu'), device(type='cuda')]
+zailuApprox (cpu): 0.374790s
+zailuNormal (cpu): 0.314514s
+squareplus (cpu): 0.215560s
+swish (cpu): 0.056899s
+elu (cpu): 0.035734s
+hardshrink (cpu): 0.025685s
+hardsigmoid (cpu): 0.029260s
+hardtanh (cpu): 0.044934s
+hardswish (cpu): 0.031956s
+leaky_relu (cpu): 0.035229s
+logsigmoid (cpu): 0.112735s
+prelu (cpu): 0.103366s
+relu (cpu): 0.030340s
+relu6 (cpu): 0.038048s
+rrelu (cpu): 0.131226s
+selu (cpu): 0.033239s
+celu (cpu): 0.041291s
+gelu (cpu): 0.163606s
+sigmoid (cpu): 0.031896s
+silu (cpu): 0.035051s
+mish (cpu): 0.136864s
+softplus (cpu): 0.048853s
+softshrink (cpu): 0.024669s
+softsign (cpu): 0.129637s
+tanh (cpu): 0.031161s
+tanhshrink (cpu): 0.060725s
+threshold (cpu): 0.058835s
+glu (cpu): 0.058734s
+identity (cpu): 0.001140s
+zailuApprox (cuda): 0.714702s
+zailuNormal (cuda): 0.437209s
+squareplus (cuda): 0.412057s
+swish (cuda): 0.141965s
+elu (cuda): 0.084516s
+hardshrink (cuda): 0.074011s
+hardsigmoid (cuda): 0.076144s
+hardtanh (cuda): 0.108386s
+hardswish (cuda): 0.083340s
+leaky_relu (cuda): 0.084462s
+logsigmoid (cuda): 0.090948s
+prelu (cuda): 0.299274s
+relu (cuda): 0.082861s
+relu6 (cuda): 0.098917s
+rrelu (cuda): 0.124871s
+selu (cuda): 0.078185s
+celu (cuda): 0.089016s
+gelu (cuda): 0.072704s
+sigmoid (cuda): 0.069990s
+silu (cuda): 0.074399s
+mish (cuda): 0.100908s
+softplus (cuda): 0.072867s
+softshrink (cuda): 0.072175s
+softsign (cuda): 0.266751s
+tanh (cuda): 0.072412s
+tanhshrink (cuda): 0.147010s
+threshold (cuda): 0.116890s
+glu (cuda): 0.106781s
+identity (cuda): 0.001135s
+
+✅ Saved raw benchmark data to activation_benchmarks_raw.csv
+
+=== Formatted Results (ms per 10k runs) ===
+device              CPU  GPU (CUDA)
+activation                         
+identity       1.140 ms    1.135 ms
+softshrink    24.669 ms   72.175 ms
+hardshrink    25.685 ms   74.011 ms
+hardsigmoid   29.260 ms   76.144 ms
+relu          30.340 ms   82.861 ms
+tanh          31.161 ms   72.412 ms
+sigmoid       31.896 ms   69.990 ms
+hardswish     31.956 ms   83.340 ms
+selu          33.239 ms   78.185 ms
+silu          35.051 ms   74.399 ms
+leaky_relu    35.229 ms   84.462 ms
+elu           35.734 ms   84.516 ms
+relu6         38.048 ms   98.917 ms
+celu          41.291 ms   89.016 ms
+hardtanh      44.934 ms  108.386 ms
+softplus      48.853 ms   72.867 ms
+swish         56.899 ms  141.965 ms
+glu           58.734 ms  106.781 ms
+threshold     58.835 ms  116.890 ms
+tanhshrink    60.725 ms  147.010 ms
+prelu        103.366 ms  299.274 ms
+logsigmoid   112.735 ms   90.948 ms
+softsign     129.637 ms  266.751 ms
+rrelu        131.226 ms  124.871 ms
+mish         136.864 ms  100.908 ms
+gelu         163.606 ms   72.704 ms
+squareplus   215.560 ms  412.057 ms
+zailuNormal  314.514 ms  437.209 ms
+zailuApprox  374.790 ms  714.702 ms
+
+✅ Saved formatted table to activation_benchmarks_formatted.csv
